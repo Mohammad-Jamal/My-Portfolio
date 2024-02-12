@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Mohammad-Jamal/dummy-react/static/css/main.58462fbc.css",
-    "main.js": "/Mohammad-Jamal/dummy-react/static/js/main.787a086d.js",
-    "static/media/u-said-it-v13-1167.mp3": "/Mohammad-Jamal/dummy-react/static/media/u-said-it-v13-1167.becd66496be9c81ddf9d.mp3",
-    "static/media/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg": "/Mohammad-Jamal/dummy-react/static/media/patrick-tomasso-Oaqk7qqNh_c-unsplash.8ca90014fb6ce5980110.jpg",
-    "static/media/spaceman.png": "/Mohammad-Jamal/dummy-react/static/media/spaceman.5ec7fcfa9a803ead726c.png",
-    "static/media/profile-img.png": "/Mohammad-Jamal/dummy-react/static/media/profile-img.5179e446ac1a570ce69b.png",
-    "index.html": "/Mohammad-Jamal/dummy-react/index.html",
-    "main.58462fbc.css.map": "/Mohammad-Jamal/dummy-react/static/css/main.58462fbc.css.map",
-    "main.787a086d.js.map": "/Mohammad-Jamal/dummy-react/static/js/main.787a086d.js.map"
+    "main.css": "./static/css/main.58462fbc.css",
+    "main.js": "./static/js/main.75518d98.js",
+    "static/media/u-said-it-v13-1167.mp3": "./static/media/u-said-it-v13-1167.becd66496be9c81ddf9d.mp3",
+    "static/media/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg": "./static/media/patrick-tomasso-Oaqk7qqNh_c-unsplash.8ca90014fb6ce5980110.jpg",
+    "static/media/spaceman.png": "./static/media/spaceman.5ec7fcfa9a803ead726c.png",
+    "static/media/profile-img.png": "./static/media/profile-img.5179e446ac1a570ce69b.png",
+    "index.html": "./index.html",
+    "main.58462fbc.css.map": "./static/css/main.58462fbc.css.map",
+    "main.75518d98.js.map": "./static/js/main.75518d98.js.map"
   },
   "entrypoints": [
     "static/css/main.58462fbc.css",
-    "static/js/main.787a086d.js"
+    "static/js/main.75518d98.js"
   ]
 }
