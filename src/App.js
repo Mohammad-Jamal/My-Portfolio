@@ -29,15 +29,15 @@ function App() {
           <Routes key={location.pathname} location={location} >
             {/* Changed component to element */}
 
-            <Route path="/" element={<Main />} />
+            <Route path="/dummy-react" element={<Main />} />
 
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/dummy-react/about" element={<AboutPage />} />
 
-            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/dummy-react/blog" element={<BlogPage />} />
 
-            <Route path="/work" element={<WorkPage />} />
+            <Route path="/dummy-react/work" element={<WorkPage />} />
 
-            <Route path="/skills" element={<MySkillsPage />} />
+            <Route path="/dummy-react/skills" element={<MySkillsPage />} />
             {/* Below is to catch all the other routes and send the user to main component,
 you can add custom 404 component or message instead of Main component*/}
             <Route path="*" element={<Main />} />
