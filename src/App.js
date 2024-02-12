@@ -29,7 +29,7 @@ function App() {
           <Routes key={location.pathname} location={location} >
             {/* Changed component to element */}
 
-            <Route path="/dummy-react" element={<Main />} />
+            <Route path="/" element={<Main />} />
 
             <Route path="/about" element={<AboutPage />} />
 

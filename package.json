@@ -2,7 +2,7 @@
   "name": "react-portfolio",
   "version": "2.0",
   "private": false,
-  "homepage": "https://github.com/Mohammad-Jamal/dummy-react",
+  "homepage": "https://github.com/Mohammad-Jamal/dummy-react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
