@@ -8,6 +8,7 @@ import PowerButton from "../subComponents/PowerButton";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import astronaut from '../assets/Images/spaceman.png'
 import BigTitle from "../subComponents/BigTitle";
+import ToggleFullscreen from "./ToggleFullscreen";
 
 
 const Box = styled.div`
@@ -101,10 +102,12 @@ const AboutPage = () => {
         <SocialIcons theme='dark' />
         <PowerButton />
         <ParticleComponent theme='dark'/>
+        <ToggleFullscreen/>
         <Spaceman>
           <img src={astronaut} alt="spaceman" />
         </Spaceman>
         <Main>
+        <ToggleFullscreen/>
         I&apos;m a front-end developer located in India. I love to create simple yet beautiful websites with great user experience.
         <br/> <br/>
         I&apos;m interested in the whole frontend stack Like trying new things and building great projects. I&apos;m an independent freelancer and blogger. I love to write blogs and read books.

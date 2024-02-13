@@ -8,6 +8,7 @@ import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
 import { motion } from "framer-motion";
 import { ProgressBar } from "react-loader-spinner";
+import ToggleFullscreen from "./ToggleFullscreen";
 
 
 
@@ -165,10 +166,16 @@ const Center = styled.button`
     animation: ${rotate} infinite 1.5s linear;
   }
 
-  & > :last-child {
+  & > :nth-child(2) {
     display: ${(props) => (props.click ? "none" : "inline-block")};
     padding-top: 1rem;
     font-size: medium;
+  }
+
+  & > :last-child {
+    display: ${(props) => (props.click ? "none" : "inline-block")};
+    padding-top: .5rem;
+    font-size: smaller;
   }
 
   @media (width <= 768px) {
@@ -250,18 +257,21 @@ const Main = () => {
 
   return (
     <MainContainer>
+      <ToggleFullscreen/>
       {loading ? (
         <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
           <ProgressBar
             height={80}
             width={80}
             radius={9}
-            color="black"
+            borderColor="black"
+            barColor="white"
             ariaLabel="three-dots-loading"
           />
         </div>
       ) : (
         <>
+
           <DarkDiv click={click} />
           <Container>
         <PowerButton />
@@ -279,7 +289,7 @@ const Main = () => {
             whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>Resume</motion.h2>
         </Resume>
         <SocialIcons theme={click ? `${iconColor}` : "light"} />
-        <Center click={click}  >
+        <Center click={click} >
           <YinYang
             onClick={() => handleClick()}
             width={click ? `${clikedIcon}` : `${iconSize}`}
@@ -287,6 +297,7 @@ const Main = () => {
             fill="currentColor"
           />
           <span>Click Here</span>
+          <span>[Double Click <b>anywhere</b> to Fullscreen]</span>
         </Center>
         <Contact click={+click} target="_blank" href="mailto:m.mohammadjamal1961@gmail.com">
           <motion.h2

@@ -9,6 +9,7 @@ import { Blogs } from "../data/BlogData";
 import BlogComponent from "./BlogComponent";
 import BigTitle from "../subComponents/BigTitle";
 import { motion } from "framer-motion";
+import ToggleFullscreen from "./ToggleFullscreen";
 
 
 
@@ -93,7 +94,9 @@ const BlogPage = () => {
         transition: { duration: 0.5 },
       }}
     >
+      
       <Container>
+      <ToggleFullscreen/>
         <LogoComponent theme="light" />
         <PowerButton />
         <SocialIcons theme="light" />

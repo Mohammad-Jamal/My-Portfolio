@@ -11,6 +11,7 @@ import BlogPage from "./components/BlogPage";
 import WorkPage from "./components/WorkPage";
 import MySkillsPage from "./components/MySkillsPage";
 
+
 function App() {
   const location = useLocation();
   return (
@@ -40,6 +41,7 @@ function App() {
 you can add custom 404 component or message instead of Main component  />*/}
             <Route path="*" element={<Main />} />
           </Routes>
+          
         </AnimatePresence>
       </ThemeProvider>
     </>

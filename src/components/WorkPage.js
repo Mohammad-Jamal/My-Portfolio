@@ -12,6 +12,7 @@ import { YinYang } from "./AllSvgs";
 import BigTitle from "../subComponents/BigTitle";
 
 import { motion} from "framer-motion";
+import ToggleFullscreen from "./ToggleFullscreen";
 
 
 
@@ -124,6 +125,7 @@ const ProjectPage = () => {
   return (
     <ThemeProvider theme={darkTheme} >
       <Box variants={container} initial='hidden' animate='show'>
+        <ToggleFullscreen/>
         <LogoComponent theme='dark'/>
         <SocialIcons theme='dark' />
         <PowerButton />
