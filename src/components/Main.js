@@ -7,6 +7,9 @@ import { NavLink } from "react-router-dom";
 import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
 import { motion } from "framer-motion";
+import { ProgressBar } from "react-loader-spinner";
+
+
 
 
 const MainContainer = styled.div`
@@ -25,7 +28,6 @@ const MainContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
-
   animation: gradient 5s linear infinite;
 
   h1,
@@ -56,7 +58,7 @@ const MainContainer = styled.div`
 const Container = styled.div`
   padding: 2rem;
 `;
-const Contact = styled(NavLink)`
+const Contact = styled.a`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 2rem;
@@ -213,8 +215,11 @@ z-index: 1;
 `;
 
 const Main = () => {
+
+  const [loading, setLoading] = useState(true);
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+
 
   // for handling the size of YinYang image to be responsive
   const [iconSize, setIconSize] = useState(window.innerWidth <= 768 ? 117 : 180) ;
@@ -231,13 +236,34 @@ const Main = () => {
     return () => {
       window.removeEventListener('resize',handleResize);
     }
-  })
+  });
+  
+  useEffect(() => {
+    // Simulate loading delay with setTimeout
+    const timer = setTimeout(() => {
+      setLoading(false); // Set loading to false after a delay (e.g., 2 seconds)
+    }, 500);
 
+    // Clean up the timer to prevent memory leaks
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <MainContainer>
-      <DarkDiv click={click} />
-      <Container>
+      {loading ? (
+        <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+          <ProgressBar
+            height={80}
+            width={80}
+            radius={9}
+            color="black"
+            ariaLabel="three-dots-loading"
+          />
+        </div>
+      ) : (
+        <>
+          <DarkDiv click={click} />
+          <Container>
         <PowerButton />
         <LogoComponent theme={click ? "dark" : "light"} />
         <Resume target="_blank" to="https://drive.google.com/file/d/1qqJnevPv0HSsW2hkv622j9bKtkLsCnjQ/view?usp=drivesdk" click={+click}>
@@ -258,12 +284,11 @@ const Main = () => {
             onClick={() => handleClick()}
             width={click ? `${clikedIcon}` : `${iconSize}`}
             height={click ? `${clikedIcon}` : `${iconSize}`}
-
             fill="currentColor"
           />
           <span>Click Here</span>
         </Center>
-        <Contact click={+click} target="_blank" to="mailto:m.mohammadjamal1961@gmail.com">
+        <Contact click={+click} target="_blank" href="mailto:m.mohammadjamal1961@gmail.com">
           <motion.h2
            initial={{
             y: -200,
@@ -335,8 +360,11 @@ const Main = () => {
             </motion.h2>
           </Skills>
         </BottomBar>
-      </Container>
-      {click ? <Intro click={click} /> : null}
+          </Container>
+          {click ? <Intro click={click} /> : null}
+        </>
+      )}
+
     </MainContainer>
   );
 };

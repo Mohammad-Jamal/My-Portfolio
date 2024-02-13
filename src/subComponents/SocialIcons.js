@@ -15,7 +15,7 @@ position: fixed;
 bottom: 0;
 left: 2rem;
 z-index: 3;
-
+transition-delay: 1s ease;
 font-size: 100%;
 
 &>*:not(:last-child) {
