@@ -1,62 +1,47 @@
-// work data
+
 
 export const Work = [
     {
         id:1,
-        name:"Agency Landing Page",
-        description:"It is build on top of the React JS, with styledComponents and GSAP for smooth scrolling animations.",
-        tags:["react","gsap","styledComponents"],
+        name:"ShopHaven-React",
+        imgSrc: require('../assets/Images/ShoeMart.png'),
+        description:"A React.js project that beautifully displays a curated collection of stylish footwear. Explore a variety of shoes categorized by type, color, category, and price range. Discover the perfect pair that suits your style.",
+        tags:["react","Js","sass","css"],
         
-        demo:"https://agency-website-eta.vercel.app/",
-        github:"https://github.com/codebucks27/Agency-website"
+        demo:"https://mohammad-jamal.github.io/ShopHaven-Repo/",
+        github:"https://github.com/Mohammad-Jamal/ShopHaven-Repo"
     },
     {
         id:2,
-        name:"Job listing website",
-        description:"A Job listing website build in ReactJS. With searching and filtering functionalities.",
-        tags:["react","sass"],
+        name:"YouTube Clone",
+        imgSrc: require('../assets/Images/Youtube-Website.jpg') ,
+        description:"I built a YouTube clone with HTML/CSS, integrating video playback, comments, and responsive design, highlighting frontend expertise and user-centric approach.",
+        tags:["Html","css"],
         
-        demo:"http://react-job-listing-website.codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/react-job-listing-website"
-        
+        demo:"https://mohammad-jamal.github.io/Youtube-Clone/",
+        github:"https://github.com/Mohammad-Jamal/Youtube-Clone"
     },
     {
         id:3,
-        name:"Dev.to Clone",
-        description:"A clone of Dev.to build using ReactJS. With realtime fetching of articles from dev.to using API.",
-        tags:["react","api","sass"],
+        name:"Facebook Clone",
+        imgSrc: require('../assets/Images/Fb-Website.png'),
+        description:"Independently created a Facebook clone with HTML/CSS, emphasizing UI/UX design, featuring news feed, user profiles, and real-time updates.",
+        tags:["Html","css"],
         
-        demo:"http://devto-clone-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/devto-clone"
+        demo:"https://mohammad-jamal.github.io/Project-FB/",
+        github:"https://github.com/Mohammad-Jamal/Project-FB"
+        
     },
     {
         id:4,
-        name:"Sidebar Menu",
-        description:"A cool looking sidebar menu build using ReactJS and styledComponents.It has really smooth animations.",
-        tags:["react","styledComponents","react-router"],
+        name:"HTML Website",
+        imgSrc: require('../assets/Images/HTML-Website.jpg'),
+        description:"A Website created only using Html. This was my first Html website at the beginning stage of my Web Development journey.",
+        tags:["Html"],
         
-        demo:"https://react-sidebar.vercel.app/",
-        github:"https://github.com/codebucks27/react-sidebar"
+        demo:"https://mohammadjamal.neocities.org/Event/event",
+        github:"https://github.com/Mohammad-Jamal"
        
-    },{
-        id:5,
-        name:"Todo App(React + Redux)",
-        description:"A todo app build using Redux-toolkit and framer-motion for smooth animations.",
-        tags:["react","redux","framer-motion"],
-        
-        demo:"http://react-redux-todo-app-git-main-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/React-Redux-Todo-App"
-        
-    },
-    {
-        id:6,
-        name:"Responsive Navigation Menu",
-        description:"A reponsive navbar menu component in ReactJS with react-router functionalities. Built from scratch.",
-        tags:["react","react-router","css"],
-        
-        demo:"http://react-responsive-navbar-codebucks27.vercel.app/",
-        github:"https://github.com/codebucks27/React-responsive-navbar"
-        
     },
     
   
