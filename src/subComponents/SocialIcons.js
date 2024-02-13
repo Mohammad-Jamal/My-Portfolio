@@ -1,124 +1,113 @@
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
-import { Facebook, Github, Twitter, YouTube } from "../components/AllSvgs";
-import { DarkTheme } from "../components/Themes";
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { Facebook, Github, Instagram, Linkedin } from '../components/AllSvgs'
+import styled from 'styled-components'
+import { darkTheme } from '../components/Themes'
+import * as PropTypes from 'prop-types';
+import { motion } from 'framer-motion'
+
 
 const Icons = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: fixed;
+bottom: 0;
+left: 2rem;
+z-index: 3;
 
-  position: fixed;
-  bottom: 0;
-  left: 2rem;
+font-size: 100%;
 
-  z-index: 3;
+&>*:not(:last-child) {
+  margin: 0.5rem 0;
+}
 
-  & > *:not(:last-child) {
-    margin: 0.5rem 0;
-  }
+@media (width <= 768px) {
+  left: 1.4rem;
+}
+   
 `;
 
 const Line = styled(motion.span)`
-  width: 2px;
-  height: 8rem;
-  background-color: ${(props) =>
-    props.color === "dark" ? DarkTheme.text : DarkTheme.body};
+width: 2px;
+height: 8rem;
+background-color: ${(props) => props.color === 'dark' ? darkTheme.text : darkTheme.body } ;
+
 `;
 
-const SocialIcons = (props) => {
+
+
+const SocialIcons = ({theme}) => {
+  const [iconSize, setIconSize] = useState(window.innerWidth <= 768 ? 20 : 25);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIconSize(window.innerWidth <= 768 ? 20 : 30);
+    }
+
+    window.addEventListener('resize',handleResize);
+
+    return () => {
+      window.removeEventListener('resize',handleResize);
+    } 
+  },[])
   return (
     <Icons>
+      
       <motion.div
-        initial={{scale:0 }}
-        animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1 }}
+      initial={{transfrom:"scale(0)"}}
+      animate={{scale:[0,1,1.5,1]}}
+      transition={{type:'spring', duration: 1, delay: 1}}
       >
-        <a
-          style={{ color: "inherit" }}
-          target="_blank"
-          rel="noreferrer"
-          href={"https://github.com/codebucks27"}
-        >
-          <Github
-            width={25}
-            height={25}
-            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-          />
-        </a>
+        <NavLink style={{color:'inherit'}} target="_blank" to="https://github.com/Mohammad-Jamal">
+          <Github width={iconSize} height={iconSize} fill={theme === "dark" ? darkTheme.text : darkTheme.body}/>
+        </NavLink>
+      </motion.div>
+      
+      <motion.div
+      initial={{transfrom:"scale(0)"}}
+      animate={{scale:[0,1,1.5,1]}}
+      transition={{type:'spring', duration: 1, delay: 1.2}}
+      >
+        <NavLink style={{color:'inherit'}} target="_blank" to="https://www.linkedin.com/in/mohammadjamalm/">
+          <Linkedin width={iconSize} height={iconSize} fill={theme === "dark" ? darkTheme.text : darkTheme.body}/>
+        </NavLink>
       </motion.div>
       <motion.div
-        initial={{scale:0 }}
-        animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.2 }}
+      initial={{transfrom:"scale(0)"}}
+      animate={{scale:[0,1,1.5,1]}}
+      transition={{type:'spring', duration: 1, delay: 1.4}}
       >
-        <a
-          style={{ color: "inherit" }}
-          target="_blank"
-          rel="noreferrer"
-          href={"https://twitter.com/code_bucks"}
-        >
-          <Twitter
-            width={25}
-            height={25}
-            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-          />
-        </a>
+        <NavLink style={{color:'inherit'}} target="_blank" to="https://www.facebook.com/mj.jamal.9026/">
+          <Facebook width={iconSize} height={iconSize} fill={theme === "dark" ? darkTheme.text : darkTheme.body}/>
+        </NavLink>
       </motion.div>
       <motion.div
-        initial={{scale:0 }}
-        animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.4 }}
+      initial={{transfrom:"scale(0)"}}
+      animate={{scale:[0,1,1.5,1]}}
+      transition={{type:'spring', duration: 1, delay: 1.6}}
       >
-        <a
-          style={{ color: "inherit" }}
-          target="_blank"
-          rel="noreferrer"
-          href={"https://facebook.com/codebucks27"}
-        >
-          <Facebook
-            width={25}
-            height={25}
-            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-          />
-        </a>
+        <NavLink style={{color:'inherit'}} target="_blank" to="https://www.instagram.com/mister___mj?utm_source=qr&igsh=MXVxaTFhcHR2bTB4bA==">
+          <Instagram width={iconSize} height={iconSize} fill={theme === "dark" ? darkTheme.text : darkTheme.body}/>
+        </NavLink>
       </motion.div>
-      <motion.div
-        initial={{scale:0 }}
-        animate={{ scale: [0, 1, 1.5, 1] }}
-        transition={{ type: "spring", duration: 1, delay: 1.6 }}
-      >
-        <a
-          style={{ color: "inherit" }}
-          target="_blank"
-          rel="noreferrer"
-          href={"https://youtube.com"}
-        >
-          <YouTube
-            width={25}
-            height={25}
-            fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
-          />
-        </a>
-      </motion.div>
-
-      <Line
-        color={props.theme}
-        initial={{
-          height: 0,
-        }}
-        animate={{
-          height: "8rem",
-        }}
-        transition={{
-          type: "spring",
-          duration: 1,
-          delay: 0.8,
-        }}
+      <Line color={theme}
+      initial={
+        {
+          height: 0
+        }
+      }
+      animate={{height: '8rem'}}
+      transition={{
+        type: 'spring', duration:1,delay: 0.8
+      }}
       />
     </Icons>
-  );
+  )
+};
+
+SocialIcons.propTypes = {
+  theme: PropTypes.string.isRequired,
 };
 
 export default SocialIcons;

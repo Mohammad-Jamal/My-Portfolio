@@ -1,27 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DarkTheme } from '../components/Themes'
-
-
-
+import { darkTheme } from '../components/Themes'
+import * as PropTypes from 'prop-types';
 
 const Logo = styled.h1`
 display: inline-block;
-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
-font-family: 'Pacifico',cursive;
-
+color: ${props => props.color === 'dark' ? darkTheme.text : darkTheme.body};
+font-family:'Pacifico',cursive;
 position: fixed;
-left: 2rem;
 top: 2rem;
-z-index:3;
+font-size: 2rem;
+font-weight: bold;
+left: 1.2rem;
+z-index: 3;
 `
 
-const LogoComponent = (props) => {
-    return (
-        <Logo color={props.theme}>
-          CB
-        </Logo>
-    )
+
+const LogoComponent = ({theme}) => {
+  return (
+    <Logo color={theme} style={{fontFamily:'Pacifico',fontWeight:500}}>
+      MJ
+    </Logo>
+  )
 }
 
-export default LogoComponent
+LogoComponent.propTypes = {
+  theme: PropTypes.string.isRequired,
+};
+
+export default LogoComponent;

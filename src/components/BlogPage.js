@@ -1,100 +1,113 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import img from "../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg"
-import LogoComponent from '../subComponents/LogoComponent'
-import SocialIcons  from '../subComponents/SocialIcons'
-import PowerButton  from '../subComponents/PowerButton'
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import img from "../assets/Images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg";
+import LogoComponent from "../subComponents/LogoComponent";
+import PowerButton from "../subComponents/PowerButton";
+import SocialIcons from "../subComponents/SocialIcons";
 
-import {Blogs} from '../data/BlogData';
-import BlogComponent from './BlogComponent'
-import AnchorComponent from '../subComponents/Anchor'
-import BigTitle from "../subComponents/BigTitlte"
-import { motion } from 'framer-motion'
+import { Blogs } from "../data/BlogData";
+import BlogComponent from "./BlogComponent";
+import BigTitle from "../subComponents/BigTitle";
+import { motion } from "framer-motion";
+
 
 
 const MainContainer = styled(motion.div)`
-background-image: url(${img});
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center;
-`
-const Container = styled.div`
-background-color: ${props => `rgba(${props.theme.bodyRgba},0.8)`};
-width: 100%;
-height:auto;
+  background-image: url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 
-position: relative;
-padding-bottom: 5rem;
-`
-
-const Center = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-padding-top: 10rem;
-`
-
-const Grid = styled.div`
-display: grid;
-grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
-grid-gap: calc(1rem + 2vw);
-`
-
-// Framer-motion config
-const container = {
-
-    hidden: {opacity:0},
-    show: {
-      opacity:1,
-  
-      transition:{
-        staggerChildren: 0.5,
-        duration: 0.5,
-      }
-    }
-  
+  @media (width <= 768px) {
+    height: auto;
   }
 
+`;
+
+const Container = styled.div`
+  background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.7)`};
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @media (width <= 768px) {
+    padding-bottom: 1rem;
+    height: 100vh;
+  }
+
+`;
+
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rem;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(calc(10rem + 18vw), 1fr));
+  grid-gap: calc(1rem + 3vw);
+
+  @media (width <= 768px) {
+    grid-template-columns: repeat(1, minmax(calc(10rem + 18vw), 1fr));
+    place-items: center;
+  }
+
+`;
+//For Framer Motion Configuration
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5,
+    },
+  },
+};
+
 const BlogPage = () => {
+  const [replace, setReplace] = useState(window.innerWidth <= 768 ? '5%' : '50%');
 
-    const [numbers, setNumbers] = useState(0);
+  useEffect(() => {
+    const hanldeReplace = () => {
+      setReplace(window.innerWidth <= 768 ? '5%' : '50%');
+    }
 
-    useEffect(() => {
-        let num = (window.innerHeight - 70)/30;
-        setNumbers(parseInt(num));
-    }, [])
+    window.addEventListener('resize',hanldeReplace);
+    return () => {
+      window.removeEventListener('resize',hanldeReplace);
+    }
+  },[])
+  return (
+    <MainContainer
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit={{
+        opacity: 0,
+        transition: { duration: 0.5 },
+      }}
+    >
+      <Container>
+        <LogoComponent theme="light" />
+        <PowerButton />
+        <SocialIcons theme="light" />
+        <Center>
+          <Grid>
+            {Blogs.map((blog, id) => {
+              return <BlogComponent key={id} blog={blog} />;
+            })}
+          </Grid>
+        </Center>
+      </Container>
+      <BigTitle text="FEATURES" top="10%" left={replace} right={replace} />
+    </MainContainer>
+  );
+};
 
-
-    return (
-        <MainContainer
-        variants={container}
-        initial='hidden'
-        animate='show'
-        exit={{
-            opacity:0, transition:{duration: 0.5}
-        }}
-        >
-            <Container>
-                <LogoComponent />
-                <PowerButton />
-                <SocialIcons />
-                <AnchorComponent number={numbers}/>
-<Center>
-<Grid>
-
-{
-    Blogs.map(blog => {
-        return <BlogComponent key={blog.id} blog={blog} />
-    })
-}
-</Grid>
-
-</Center>
-<BigTitle text="BLOG" top="5rem" left="5rem" />
-            </Container>
-        </MainContainer>
-    )
-}
-
-export default BlogPage
+export default BlogPage;
