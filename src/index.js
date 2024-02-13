@@ -5,15 +5,15 @@ import App from './App'
 import "normalize.css"
 import { createRoot } from 'react-dom/client';
 
-import {HashRouter} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 
 
 // From react 18 we should use createRoot instead of ReactDOM
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<HashRouter>
+root.render(<BrowserRouter>
   <App />
-</HashRouter>);
+</BrowserRouter>);
 
 // ReactDOM.render(
 //   <React.StrictMode>
