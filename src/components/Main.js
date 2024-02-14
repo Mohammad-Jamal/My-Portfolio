@@ -276,7 +276,7 @@ const Main = () => {
           <Container>
         <PowerButton />
         <LogoComponent theme={click ? "dark" : "light"} />
-        <Resume target="_blank" to="https://drive.google.com/file/d/1qqJnevPv0HSsW2hkv622j9bKtkLsCnjQ/view?usp=drivesdk" click={+click}>
+        <Resume target="_blank" to="https://drive.google.com/file/d/1RG0jO6Rf-9LVzazLTF_lJ-TNfrwdY1_m/view?usp=sharing" click={+click}>
           <motion.h2 
             initial={{
             y: -200,
