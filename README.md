@@ -2,22 +2,9 @@
 
 ![GitHub stars](https://img.shields.io/github/stars/codebucks27/react-portfolio-final?style=social&logo=ApacheSpark&label=Stars&maxAge=2592000)&nbsp;&nbsp;
 ![GitHub forks](https://img.shields.io/github/forks/codebucks27/react-portfolio-final?style=social&logo=KashFlow)&nbsp;&nbsp;
-![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow&maxAge=2592000)&nbsp;&nbsp;<br />
+<br />
 
-This repository contains Final code for The Portfolio Website in ReactJS. <br />
-
-For the **Demo** and **Final Code** checkout this link👇: <br />
-<a href="https://devdreaming.com/videos/build-stunning-portfolio-website-react-js-framer-motion#overview" target="_blank">Checkout this Responsive Portfolio in ReactJS</a> <br />
-
-If you want to learn how to create it please follow below tutorial👇: <br />
-https://youtu.be/jcohAIaSy2M <br />
-[![YouTube Video Views](https://img.shields.io/youtube/views/jcohAIaSy2M?style=social)](https://youtu.be/jcohAIaSy2M)<br />
-
-[⚠⚠⚠ If you want full code of this website then you can get it from here👇: <br />]::
-
-You'll get code files which contans code for responsive portfolio website with
-all the animations showed in the demo.
-Also, I have used React Lazy loading to increase loading speed.
+#### [Check it out right now !](https://mohammadajamal.vercel.app)
 
 I have recently updated all the required dependencies for React Portfolio Website.
 You might see some differences in implementation such as,
@@ -32,7 +19,6 @@ You might see some differences in implementation such as,
 
 ![HOME](https://github.com/codebucks27/React-Portfolio-starter-code-files/blob/main/Portfolio%20Images/Home.png)
 ![Intro](https://github.com/codebucks27/React-Portfolio-starter-code-files/blob/main/Portfolio%20Images/Intro.png)
-![Blog](https://github.com/codebucks27/React-Portfolio-starter-code-files/blob/main/Portfolio%20Images/Blog.png)
 ![Home Mobile](https://github.com/codebucks27/React-Portfolio-starter-code-files/blob/main/Portfolio%20Images/Home-Mobile.png)
 ![Intro Mobile](https://github.com/codebucks27/React-Portfolio-starter-code-files/blob/main/Portfolio%20Images/Intro-Mobile.png)
 ![Intro Blog](https://github.com/codebucks27/React-Portfolio-starter-code-files/blob/main/Portfolio%20Images/Blog-Mobile.png)
